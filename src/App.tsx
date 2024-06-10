@@ -1,12 +1,13 @@
 import React from 'react';
 import '@elastic/eui/dist/eui_theme_dark.css';
 import "./index.scss";
+import "./index.css";
 
-import { EuiLoadingLogo, EuiProvider, EuiText, EuiEmptyPrompt, EuiButton, EuiTitle, EuiLink } from '@elastic/eui';
-
+import { EuiLoadingLogo, EuiProvider, EuiText, EuiEmptyPrompt, EuiButton, EuiTitle, EuiLink, EuiThemeProvider, EuiCode, EuiThemeAmsterdam } from '@elastic/eui';
+import { ThemeProvider } from '@emotion/react';
 
 const MyApp = () => (
-  <EuiProvider colorMode="dark">
+  <EuiProvider>
     <EuiEmptyPrompt
     icon={<EuiLoadingLogo logo="cloudSunny" size="xl" />}
     title={<h2>Do you need a jacket today, Melbourne?</h2>}
