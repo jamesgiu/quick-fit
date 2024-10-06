@@ -24,6 +24,25 @@
   color: white;
 }
 
+.bg-image-wrapper {
+    opacity: 0.1;
+    background: url("/public/quick-fit-wallpaper.png");
+    height:100%;
+    width: 100%;
+    position: absolute;
+}
+
+.euiEmptyPrompt__footer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5px;
+  left: 42.5%;
+  background-color:  #FFF066 !important;
+  color: black !important;
+  border-radius: 40px !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .App-link {
   color: #61dafb;
 }

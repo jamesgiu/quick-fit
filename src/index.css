@@ -25,7 +25,7 @@ code {
 }
 
 @keyframes gradient {
-  0% {
+  0% {  
       background-position: 0% 50%;
   }
 
@@ -40,4 +40,8 @@ code {
 
 #root .euiPanel {
   border-radius: 200px;
+}
+
+#root {
+  height: 100%;
 }
