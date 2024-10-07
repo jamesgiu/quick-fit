@@ -2,26 +2,26 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.app-logo {
   pointer-events: none;
+  background: url("/public/design.png");
+  background-size: cover;
+  background-position: center top;
+  height: 320px;
+  width: 320px;
+  margin: auto;
+  opacity: 0.5;
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.euiTitle.logo-subtext {
+  margin-top: -100px;
+  rotate: -20deg;
+  z-index: 10;
+  font-family: "LogoFont";
+  font-size: 40px;
+  color: rgb(238, 101, 215);
+  font-weight: 100;
 }
 
 .bg-image-wrapper {
@@ -40,32 +40,32 @@
   bottom: 0;
   right: 0;
   margin-bottom: 5px;
-  background-color:  #FFF066;
   color: black;
-  border-radius: 40px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: none;
+  padding: 5px;
+}
+
+.euiEmptyPrompt__footer .euiIcon {
+  padding-left: 5px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .euiPanel.day-card {
   background-color: #FFF066;
+  width: 90%;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .euiPanel.night-card {
   background-color: #690e75;
   color: rgb(255, 255, 255);
+  width: 90%;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .euiPanel.night-card .euiTitle {

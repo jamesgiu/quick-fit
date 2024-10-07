@@ -38,3 +38,8 @@ code {
 #root {
   height: 100%;
 }
+
+@font-face {
+  font-family: 'LogoFont';
+  src: local('LogoFont'), url("/public/PirateScripts-j6n7.ttf") format('TrueType');
+}

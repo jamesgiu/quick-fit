@@ -3,19 +3,22 @@ import "./index.scss";
 import "./index.css";
 import "./App.css";
 
-import { EuiLoadingLogo, EuiProvider, EuiEmptyPrompt, EuiLink, EuiFlexGroup, EuiFlexItem, EuiPanel, EuiPageHeader, EuiCard, EuiIcon, EuiLoadingChart } from '@elastic/eui';
+import { EuiLoadingLogo, EuiProvider, EuiEmptyPrompt, EuiLink, EuiFlexGroup, EuiFlexItem, EuiCard, EuiTitle, EuiIcon } from '@elastic/eui';
 
 const MyApp = () => (
   <EuiProvider>
     <div className="app-content">
       <div className="bg-image-wrapper"/>
       <EuiEmptyPrompt
-      icon={   <EuiLoadingChart size="xl" />}
-      title={<h2>Do you need a jacket today, Melbourne?</h2>}
+      icon={ <div className="app-logo"/>}
+      title={<EuiTitle className="logo-subtext" size='l'><h1>QuickFit</h1></EuiTitle>}
       footer={
         <div className="qf-footer">
+          <span>
+          © 2024 Jiv
+          </span>
           <EuiLink href="#" target="https://github.com/jamesgiu/quick-fit">
-          © 2024 Jiv Pty Ltd jamesgiu/quick-fit
+             <EuiIcon size="l" type={"logoGithub"}/>
           </EuiLink>
         </div>
       }
