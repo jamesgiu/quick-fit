@@ -53,17 +53,24 @@
   color: #61dafb;
 }
 
+.euiPanel.current-temp {
+  background: none;
+  box-shadow: none;
+  margin-top: -50px;
+  margin-bottom: 50px;
+}
+
 .euiPanel.day-card {
-  background-color: #FFF066;
-  width: 90%;
+  background-color: #fff066d7;
+  width: 80%;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .euiPanel.night-card {
-  background-color: #690e75;
+  background-color: #690e75d3;
   color: rgb(255, 255, 255);
-  width: 90%;
+  width: 80%;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
