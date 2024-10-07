@@ -26,20 +26,23 @@
 
 .bg-image-wrapper {
     opacity: 0.1;
-    background: url("/public/quick-fit-wallpaper.png");
-    height:100%;
+    background: url("/public/quick-fit-wallpaper.jfif");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 100%;
     width: 100%;
     position: absolute;
 }
 
-.euiEmptyPrompt__footer {
+.euiEmptyPrompt__footer:has(.qf-footer) {
   position: absolute;
   bottom: 0;
+  right: 0;
   margin-bottom: 5px;
-  left: 42.5%;
-  background-color:  #FFF066 !important;
-  color: black !important;
-  border-radius: 40px !important;
+  background-color:  #FFF066;
+  color: black;
+  border-radius: 40px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -54,4 +57,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.euiPanel.day-card {
+  background-color: #FFF066;
+}
+
+.euiPanel.night-card {
+  background-color: #690e75;
+  color: rgb(255, 255, 255);
+}
+
+.euiPanel.night-card .euiTitle {
+  color: rgb(107, 106, 192);
 }

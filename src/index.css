@@ -12,13 +12,6 @@ body {
   color: #3e3bb8;
 }
 
-button {
-  background-color: #FFF066 !important;
-  color: black !important;
-  border-radius: 40px !important;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
