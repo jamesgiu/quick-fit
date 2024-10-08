@@ -3,7 +3,7 @@ import "./index.scss";
 import "./index.css";
 import "./App.css";
 
-import { EuiLoadingLogo, EuiProvider, EuiEmptyPrompt, EuiLink, EuiFlexGroup, EuiFlexItem, EuiCard, EuiTitle, EuiIcon, EuiStat, EuiPanel, EuiTextColor } from '@elastic/eui';
+import { EuiLoadingLogo, EuiProvider, EuiEmptyPrompt, EuiLink, EuiFlexGroup, EuiFlexItem, EuiCard, EuiTitle, EuiIcon } from '@elastic/eui';
 import { useEffect, useState } from 'react';
 import { getWeather, WeatherType } from './MeteoApi';
 

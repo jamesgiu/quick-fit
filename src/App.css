@@ -35,14 +35,14 @@
 .bg-image-wrapper.bg-day {
   background: url("/public/quick-fit-wallpaper-day.png");
   background-size: cover;
-  background-position: center ;
+  background-position: center top;
   background-repeat: no-repeat;
 }
 
 .bg-image-wrapper.bg-night {
   background: url("/public/quick-fit-wallpaper-night.png");
   background-size: cover;
-  background-position: center ;
+  background-position: center top;
   background-repeat: no-repeat;
 }
 
