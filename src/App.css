@@ -1,38 +1,97 @@
+.app-content {
+  background: linear-gradient(-45deg, #FFA6F6	, #A8A6FF, #A6FAFF, #FFF066);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+  color: #3e3bb8;
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.app-logo {
   pointer-events: none;
+  background: url("/public/logo.png");
+  background-size: cover;
+  background-position: center top;
+  height: 320px;
+  width: 320px;
+  margin: auto;
+  margin-top: -55px;
+  opacity: 0.5;
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.euiTitle.logo-subtext {
+  margin-top: -100px;
+  rotate: -20deg;
+  z-index: 10;
+  font-family: "LogoFont";
+  font-size: 40px;
+  color: rgb(238, 101, 215);
+  font-weight: 100;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.bg-image-wrapper.bg-day {
+  background: url("/public/quick-fit-wallpaper-day.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.bg-image-wrapper.bg-night {
+  background: url("/public/quick-fit-wallpaper-night.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.bg-image-wrapper {
+    opacity: 0.1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.euiEmptyPrompt__footer:has(.qf-footer) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 5px;
+  color: black;
+  background: none;
+  padding: 5px;
+}
+
+.euiEmptyPrompt__footer .euiIcon {
+  padding-left: 5px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.euiPanel.current-temp {
+  background: none;
+  box-shadow: none;
+  margin-top: -60px;
+}
+
+.euiPanel.day-card {
+  background-color: #fff066d7;
+  width: 50%;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.euiPanel.night-card {
+  background-color: #690e75c2;
+  color: rgb(255, 255, 255);
+  width: 50%;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.euiPanel.night-card .euiTitle {
+  color: rgb(107, 106, 192);
 }

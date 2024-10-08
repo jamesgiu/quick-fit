@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@keyframes gradient {
+  0% {  
+      background-position: 0% 50%;
+  }
+
+  50% {
+      background-position: 100% 50%;
+  }
+
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+#root .euiPanel {
+  border-radius: 100px;
+}
+
+#root {
+  height: 100vh;
+}
+
+@font-face {
+  font-family: 'LogoFont';
+  src: local('LogoFont'), url("/public/PirateScripts-j6n7.ttf") format('TrueType');
+}
