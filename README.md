@@ -13,7 +13,7 @@
 
 # QuickTick
 
-Hosted at: [https://jamesgiu.github.io/quick-tick/](https://jamesgiu.github.io/quick-fit/)
+Hosted at: [https://jamesgiu.github.io/quick-fit/](https://jamesgiu.github.io/quick-fit/)
 
 
 ## Commands
