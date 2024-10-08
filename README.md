@@ -4,7 +4,7 @@
 <h3 align="center">QuickFit 🕶
 </h3>
   <p align="center">
-   Jacket-wearing decision-making application for Melbournians (and maybe beyond?
+   Jacket-wearing decision-making application for Melbournians (and maybe beyond?)
     <br />
     <a href="https://jamesgiu.github.io/quick-fit/">Try it out</a>
   </p>
