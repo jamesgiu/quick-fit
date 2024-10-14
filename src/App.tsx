@@ -42,7 +42,7 @@ const MyApp = () => {
     if (weatherData) {
       let tomorrowAvg = 0;
       // Filter to be only indices that are for tomorrow, and before 6pm.
-      const tomorrowDates = weatherData.hourly.time.filter(time => time.getDay() !== new Date(Date.now()).getDay() && time.getHours() > 7 && time.getHours() < 18);
+      const tomorrowDates = weatherData.hourly.time.filter(time => time.getDay() !== new Date(Date.now()).getDay()).slice(0, 23);
       tomorrowDates.forEach((date) => {
         tomorrowAvg += hourMap?.get(date)!;
       });

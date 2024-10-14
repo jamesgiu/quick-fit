@@ -34,7 +34,7 @@ export function getWeather(onSuccessCallback: (weather: WeatherType)=>void) {
         "forecast_days": 2
     };
     const url = "https://api.open-meteo.com/v1/forecast";
-    const responses = fetchWeatherApi(url, params).then(resp => {
+    fetchWeatherApi(url, params).then(resp => {
     // Helper function to form time ranges
     const range = (start: number, stop: number, step: number) =>
         Array.from({ length: (stop - start) / step }, (_, i) => start + i * step);
@@ -45,10 +45,6 @@ export function getWeather(onSuccessCallback: (weather: WeatherType)=>void) {
   
     // Attributes for timezone and location
     const utcOffsetSeconds = response.utcOffsetSeconds();
-    const timezone = response.timezone();
-    const timezoneAbbreviation = response.timezoneAbbreviation();
-    const latitude = response.latitude();
-    const longitude = response.longitude();
     
     const current = response.current()!;
     const hourly = response.hourly()!;
