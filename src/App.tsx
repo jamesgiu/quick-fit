@@ -3,7 +3,7 @@ import "./index.scss";
 import "./index.css";
 import "./App.css";
 
-import { EuiLoadingLogo, EuiProvider, EuiEmptyPrompt, EuiLink, EuiFlexGroup, EuiFlexItem, EuiCard, EuiTitle, EuiIcon } from '@elastic/eui';
+import { EuiLoadingLogo, EuiProvider, EuiEmptyPrompt, EuiLink, EuiFlexGroup, EuiFlexItem, EuiCard, EuiTitle, EuiIcon, EuiHeader, EuiToolTip, EuiButton } from '@elastic/eui';
 import { useEffect, useState } from 'react';
 import { getWeather, WeatherType } from './MeteoApi';
 
@@ -89,7 +89,7 @@ const tomorrowCard =           <EuiFlexItem>
 className="day-card tomorrow-card"
 icon={<EuiLoadingLogo size="xl" logo={"sun"}/>}
 title={`${getTomorrowTemp()}°C`}
-description="Would you need a jacket tomorrow?"
+description="Average during the day tomorrow"
 betaBadgeProps={{
   label: 'Tomorrow',
   color: 'accent',
@@ -116,13 +116,8 @@ const currentTemp = () => {
     return(
       <EuiCard
       className="current-temp"
-      icon={<EuiIcon type="temperature"/>}
       title={`${Math.round(weatherData.current.temperature2m)}°C`}
-      description={`Feels like ${Math.round(weatherData.current.apparentTemperature)}°C`}
-      betaBadgeProps={{
-        label: 'Current',
-        color: 'subdued',
-      }}
+      description={`but it feels like ${Math.round(weatherData.current.apparentTemperature)}°C`}
       >
       </EuiCard>
       );
@@ -138,12 +133,9 @@ const getJacketCard = () => {
     return(
       <EuiCard
       className="jacket-card"
-      icon={<EuiIcon type={`quick-fit/${jacket}.svg`}/>}
-      title={"You will need " + jacket.toString()}
-      betaBadgeProps={{
-        label: 'Jacket',
-        color: 'subdued',
-      }}
+      icon={<EuiIcon size="xxl" type={`quick-fit/${jacket}.svg`}/>}
+      title={jacket.toString()}
+      description={"based on our formula™, factoring in..."}
       >
       </EuiCard>
       );
@@ -251,19 +243,25 @@ const currentJacketCheck = (weatherData: WeatherType) : FIT => {
         <EuiFlexGroup className='icons-flex-group'>  
         {weatherData &&
         <EuiFlexItem>
-          <EuiIcon type="tear"/>
+        <EuiIcon type="temperature" size="l"/>
+          {Math.round(weatherData?.current.apparentTemperature).toString() + "°C"}
+        </EuiFlexItem>
+        }
+        {weatherData &&
+        <EuiFlexItem>
+          <EuiIcon type="tear" size="l"/>
           {Math.round(weatherData?.current.precipitation).toString() + "%"}
         </EuiFlexItem>
         }
         {weatherData && 
         <EuiFlexItem>
-          <EuiIcon type="flag"/>
+          <EuiIcon type="flag" size="l"/>
           {Math.round(weatherData?.current.windSpeed10m).toString() + "km/h"}
         </EuiFlexItem>
         }
         {weatherData && 
         <EuiFlexItem>
-          <EuiIcon type="heatmap"/>
+          <EuiIcon type="heatmap" size="l"/>
           {Math.round(weatherData?.current.relativeHumidity2m).toString() + "%"}
         </EuiFlexItem>
         }

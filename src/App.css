@@ -54,9 +54,10 @@
 }
 
 .icons-flex-group {
-  width: 10%;
   margin: auto;
-  padding: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 200px;
 }
 
 .euiEmptyPrompt__footer:has(.qf-footer) {
@@ -82,6 +83,33 @@
   box-shadow: none;
   margin-top: -60px;
 }
+
+.euiPanel.jacket-card {
+  background: none;
+  box-shadow: none;
+}
+
+@keyframes pulse {
+  0% {
+     filter: brightness(0.5);
+     transform: scale(1);
+  }
+
+  50% {
+      filter: brightness(1);
+      transform: scale(1.1);
+  }
+
+  100% {
+      filter: brightness(0.5);
+      transform: scale(1);
+  }
+}
+
+.euiPanel.jacket-card img {
+  animation: pulse 2s infinite;
+}
+
 
 .euiPanel.day-card {
   background-color: #fff066d7;
