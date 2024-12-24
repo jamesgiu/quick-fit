@@ -133,7 +133,7 @@ const getJacketCard = () => {
     return(
       <EuiCard
       className="jacket-card"
-      icon={<EuiIcon size="xxl" type={`quick-fit/${jacket}.svg`}/>}
+      icon={<EuiIcon size="xxl" type={`${jacket}.svg`}/>}
       title={jacket.toString()}
       description={"based on our formula™, factoring in..."}
       >
