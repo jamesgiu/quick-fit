@@ -57,7 +57,11 @@
   margin: auto;
   padding-bottom: 20px;
   padding-top: 20px;
-  width: 200px;
+  width: 200px;  
+}
+
+.euiFlexGroup.icons-flex-group {
+  flex-wrap: unset;
 }
 
 .euiEmptyPrompt__footer:has(.qf-footer) {
