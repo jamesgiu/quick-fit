@@ -3,7 +3,7 @@ import "./index.scss";
 import "./index.css";
 import "./App.css";
 
-import { EuiLoadingLogo, EuiProvider, EuiEmptyPrompt, EuiLink, EuiFlexGroup, EuiFlexItem, EuiCard, EuiTitle, EuiIcon, EuiHeader, EuiToolTip, EuiButton } from '@elastic/eui';
+import { EuiLoadingLogo, EuiProvider, EuiEmptyPrompt, EuiLink, EuiFlexGroup, EuiFlexItem, EuiCard, EuiTitle, EuiIcon } from '@elastic/eui';
 import { useEffect, useState } from 'react';
 import { getWeather, WeatherType } from './MeteoApi';
 
@@ -78,7 +78,7 @@ const MyApp = () => {
   title={`${soonAverageTemp}°C`}
   description={isDay && weatherData && `Today's coldest is ${Math.round(weatherData!.daily.apparentTemperatureMin[0])}°C, and the warmest is ${Math.round(weatherData!.daily.apparentTemperatureMax[0])}°C`}
   betaBadgeProps={{
-    label: 'The day',
+    label: `${soonAverageTemp && soonAverageTemp > weatherData?.current.apparentTemperature! ? "Average temp increasing 🔥🔼": "Average temp lowering 🔻"}`,
     color: 'accent',
   }}
 />
@@ -91,7 +91,7 @@ icon={<EuiLoadingLogo size="xl" logo={"sun"}/>}
 title={`${getTomorrowTemp()}°C`}
 description="Average during the day tomorrow"
 betaBadgeProps={{
-  label: 'Tomorrow',
+  label: `${getTomorrowTemp() > weatherData?.daily.apparentTemperatureMax[0]! ? "Max temp higher tomorrow 🔥🔼": "Max temp lower tomorrow 🔻"}`,
   color: 'accent',
 }}
 />
@@ -104,7 +104,7 @@ icon={<EuiLoadingLogo size="xl" logo={"moon"}/>}
 title={isDay ? `${getTonightTemp()}°C` : `${soonAverageTemp}°C`}
 description= {isDay && weatherData ? `The minimum temperature will feel like ${Math.round(weatherData?.daily.apparentTemperatureMin[0])}°C` : weatherData &&  `Today's coldest felt like ${Math.round(weatherData!.daily.apparentTemperatureMin[0])}°C, and the warmest felt like  ${Math.round(weatherData!.daily.apparentTemperatureMax[0])}°C`}
 betaBadgeProps={{
-  label: 'Tonight',
+  label: `${getTonightTemp() > weatherData?.current.apparentTemperature! ? "Average max temp up tonight 🔥🔼": "Average temp lower tonight 🔻"}`,
   color: 'subdued',
 }}
 />
