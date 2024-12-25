@@ -2,9 +2,10 @@
   background: linear-gradient(-45deg, #FFA6F6	, #A8A6FF, #A6FAFF, #FFF066);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
-  height: 100vh;
+  min-height: 100vh;
   color: #3e3bb8;
 }
+
 .App {
   text-align: center;
 }
@@ -48,8 +49,8 @@
 
 .bg-image-wrapper {
     opacity: 0.1;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     position: absolute;
 }
 
@@ -60,18 +61,28 @@
   width: 200px;  
 }
 
-.euiFlexGroup.icons-flex-group {
+.euiFlexGroup.icons-flex-group,
+.euiFlexGroup.cards-flex-group {
   flex-wrap: unset;
 }
 
-.euiEmptyPrompt__footer:has(.qf-footer) {
+.qf-footer {
+  float: right;
+  color: black;
+  padding: 5px;
+  z-index: 100;
+  position: relative;
+  height: 20vh;
+  width: 100%;
+}
+
+.qf-footer span {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin-bottom: 5px;
   color: black;
-  background: none;
   padding: 5px;
+  z-index: 100;
 }
 
 .euiEmptyPrompt__footer .euiIcon {
@@ -114,12 +125,12 @@
   animation: pulse 2s infinite;
 }
 
-
 .euiPanel.day-card {
   background-color: #fff066d7;
   width: 50%;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  min-width: 125px;
 }
 
 .euiPanel.night-card {
@@ -128,6 +139,7 @@
   width: 50%;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  min-width: 125px;
 }
 
 .euiPanel.night-card .euiTitle {

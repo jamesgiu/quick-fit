@@ -78,7 +78,7 @@ const MyApp = () => {
   title={`${soonAverageTemp}°C`}
   description={isDay && weatherData && `Today's coldest is ${Math.round(weatherData!.daily.apparentTemperatureMin[0])}°C, and the warmest is ${Math.round(weatherData!.daily.apparentTemperatureMax[0])}°C`}
   betaBadgeProps={{
-    label: `${soonAverageTemp && soonAverageTemp > weatherData?.current.apparentTemperature! ? "Average temp increasing 🔥🔼": "Average temp lowering 🔻"}`,
+    label: `Average soon ${soonAverageTemp && soonAverageTemp > weatherData?.current.apparentTemperature! ? "🔥🔼": "🔻"}`,
     color: 'accent',
   }}
 />
@@ -91,7 +91,7 @@ icon={<EuiLoadingLogo size="xl" logo={"sun"}/>}
 title={`${getTomorrowTemp()}°C`}
 description="Average during the day tomorrow"
 betaBadgeProps={{
-  label: `${getTomorrowTemp() > weatherData?.daily.apparentTemperatureMax[0]! ? "Max temp higher tomorrow 🔥🔼": "Max temp lower tomorrow 🔻"}`,
+  label: `Tomorrow ${getTomorrowTemp() > weatherData?.daily.apparentTemperatureMax[0]! ? "🔥🔼": "🔻"}`,
   color: 'accent',
 }}
 />
@@ -104,7 +104,7 @@ icon={<EuiLoadingLogo size="xl" logo={"moon"}/>}
 title={isDay ? `${getTonightTemp()}°C` : `${soonAverageTemp}°C`}
 description= {isDay && weatherData ? `The minimum temperature will feel like ${Math.round(weatherData?.daily.apparentTemperatureMin[0])}°C` : weatherData &&  `Today's coldest felt like ${Math.round(weatherData!.daily.apparentTemperatureMin[0])}°C, and the warmest felt like  ${Math.round(weatherData!.daily.apparentTemperatureMax[0])}°C`}
 betaBadgeProps={{
-  label: `${getTonightTemp() > weatherData?.current.apparentTemperature! ? "Average max temp up tonight 🔥🔼": "Average temp lower tonight 🔻"}`,
+  label: `Tonight ${isDay ? getTonightTemp() > weatherData?.current.apparentTemperature! ? "🔥🔼": "🔻" : soonAverageTemp && soonAverageTemp > weatherData?.current.apparentTemperature! ? "🔥🔼": "🔻"}`,
   color: 'subdued',
 }}
 />
@@ -227,16 +227,6 @@ const currentJacketCheck = (weatherData: WeatherType) : FIT => {
         <EuiEmptyPrompt
         icon={ <div className="app-logo"/>}
         title={<EuiTitle className="logo-subtext" size='l'><h1>QuickFit</h1></EuiTitle>}
-        footer={
-          <div className="qf-footer">
-            <span>
-            © 2024 Jiv
-            </span>
-            <EuiLink href="#" target="https://github.com/jamesgiu/quick-fit">
-              <EuiIcon size="l" type={"logoGithub"}/>
-            </EuiLink>
-          </div>
-        }
         />
         {currentTemp()}
         {getJacketCard()}
@@ -269,6 +259,13 @@ const currentJacketCheck = (weatherData: WeatherType) : FIT => {
         <EuiFlexGroup className='cards-flex-group'>  
           {isDay ? <>{dayCard}{nightCard}</> : <>{nightCard}{tomorrowCard}</> }
         </EuiFlexGroup>
+        <div className="qf-footer">
+            <span>
+            © 2024 Jiv             <EuiLink href="#" target="https://github.com/jamesgiu/quick-fit">
+              <EuiIcon size="l" type={"logoGithub"}/>
+            </EuiLink>
+            </span>
+      </div>
       </div>
     </EuiProvider>
   );
