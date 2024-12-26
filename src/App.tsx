@@ -163,7 +163,7 @@ const currentJacketCheck = (weatherData: WeatherType) : FIT => {
         return FIT.MEDIUM_JACKET;
     }
 
-    if(weatherData.current.apparentTemperature >= 23) {
+    if(weatherData.current.apparentTemperature >= 23 && weatherData.current.apparentTemperature < 30) {
       if (weatherData.current.windSpeed10m > 20) {
         return FIT.LIGHT_JACKET;
       }
