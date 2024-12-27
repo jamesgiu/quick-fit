@@ -78,7 +78,7 @@ const MyApp = () => {
   title={`${soonAverageTemp}°C`}
   description={isDay && weatherData && `Today's coldest is ${Math.round(weatherData!.daily.apparentTemperatureMin[0])}°C, and the warmest is ${Math.round(weatherData!.daily.apparentTemperatureMax[0])}°C`}
   betaBadgeProps={{
-    label: `Average soon ${soonAverageTemp && soonAverageTemp > weatherData?.current.apparentTemperature! ? "🔥🔼": "🔻"}`,
+    label: `Soon ${soonAverageTemp && soonAverageTemp > weatherData?.current.apparentTemperature! ? "🔥🔼": "🔻"}`,
     color: 'accent',
   }}
 />

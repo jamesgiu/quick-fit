@@ -85,6 +85,10 @@
   z-index: 100;
 }
 
+.euiFlexItem .euiBetaBadge {
+  min-width: 150px;
+}
+
 .euiEmptyPrompt__footer .euiIcon {
   padding-left: 5px;
 }
@@ -130,7 +134,7 @@
   width: 50%;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  min-width: 125px;
+  min-width: 180px;
 }
 
 .euiPanel.night-card {
@@ -139,7 +143,7 @@
   width: 50%;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  min-width: 125px;
+  min-width: 180px;
 }
 
 .euiPanel.night-card .euiTitle {
