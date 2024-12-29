@@ -33,7 +33,7 @@ export function getWeather(onSuccessCallback: (weather: WeatherType)=>void) {
     const params = {
         "latitude": -37.814,
         "longitude": 144.9633,
-        "current": ["temperature_2m", "relative_humidity_2m", "apparent_temperature", "is_day", "precipitation", "rain", "showers", "snowfall", "wind_speed_10m"],
+        "current": ["temperature_2m", "relative_humidity_2m", "apparent_temperature", "is_day", "precipitation_probability", "rain", "showers", "snowfall", "wind_speed_10m"],
         // FIXME weirdly low data ?? I think temperature2m index, 0 == midnight! 
         "hourly": ["temperature_2m"],
         "daily": ["temperature_2m_max", "temperature_2m_min", "apparent_temperature_max", "apparent_temperature_min", "sunrise", "sunset"],
