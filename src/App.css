@@ -1,5 +1,5 @@
 .app-content {
-  background: linear-gradient(-45deg, #FFA6F6	, #A8A6FF, #A6FAFF, #FFF066);
+  background: linear-gradient(-45deg, #ffa6f6, #a8a6ff, #a6faff, #fff066);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   min-height: 100vh;
@@ -48,17 +48,17 @@
 }
 
 .bg-image-wrapper {
-    opacity: 0.1;
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
+  opacity: 0.1;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
 }
 
 .icons-flex-group {
   margin: auto;
   padding-bottom: 40px;
   padding-top: 5px;
-  width: 200px;  
+  width: 200px;
 }
 
 .euiFlexGroup.icons-flex-group,
@@ -111,18 +111,18 @@
 
 @keyframes pulse {
   0% {
-     filter: brightness(0.5);
-     transform: scale(1);
+    filter: brightness(0.5);
+    transform: scale(1);
   }
 
   50% {
-      filter: brightness(1);
-      transform: scale(1.1);
+    filter: brightness(1);
+    transform: scale(1.1);
   }
 
   100% {
-      filter: brightness(0.5);
-      transform: scale(1);
+    filter: brightness(0.5);
+    transform: scale(1);
   }
 }
 
