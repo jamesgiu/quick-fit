@@ -56,8 +56,8 @@
 
 .icons-flex-group {
   margin: auto;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-top: 5px;
   width: 200px;  
 }
 
@@ -106,6 +106,7 @@
 .euiPanel.jacket-card {
   background: none;
   box-shadow: none;
+  padding-top: 0px;
 }
 
 @keyframes pulse {

@@ -261,7 +261,7 @@ const currentJacketCheck = (weatherData: WeatherType) : FIT => {
         </EuiFlexGroup>
         <div className="qf-footer">
             <span>
-            © 2024 Jiv             <EuiLink href="#" target="https://github.com/jamesgiu/quick-fit">
+            © 2024 {Math.random() > 0.5 ? "Jiv" : "Lames"} <EuiLink href="https://github.com/jamesgiu/quick-fit" target="https://github.com/jamesgiu/quick-fit">
               <EuiIcon size="l" type={"logoGithub"}/>
             </EuiLink>
             </span>
