@@ -9,7 +9,13 @@ export interface WeatherType {
         time: Date,
         temperature2m: number,
         apparentTemperature: number,
-        isDay: number
+        isDay: number,
+        relativeHumidity2m: number,
+        precipitation: number,
+        rain: number,
+        showers: number,
+        snowfall: number,
+        windSpeed10m: number
     },
     daily: {
         time: Date[],
@@ -27,14 +33,15 @@ export function getWeather(onSuccessCallback: (weather: WeatherType)=>void) {
     const params = {
         "latitude": -37.814,
         "longitude": 144.9633,
-        "current": ["temperature_2m", "apparent_temperature", "is_day"],
-        "hourly": "temperature_2m",
+        "current": ["temperature_2m", "relative_humidity_2m", "apparent_temperature", "is_day", "precipitation", "rain", "showers", "snowfall", "wind_speed_10m"],
+        // FIXME weirdly low data ?? I think temperature2m index, 0 == midnight! 
+        "hourly": ["temperature_2m"],
         "daily": ["temperature_2m_max", "temperature_2m_min", "apparent_temperature_max", "apparent_temperature_min", "sunrise", "sunset"],
         "timezone": "Australia/Sydney",
         "forecast_days": 2
     };
     const url = "https://api.open-meteo.com/v1/forecast";
-    const responses = fetchWeatherApi(url, params).then(resp => {
+    fetchWeatherApi(url, params).then(resp => {
     // Helper function to form time ranges
     const range = (start: number, stop: number, step: number) =>
         Array.from({ length: (stop - start) / step }, (_, i) => start + i * step);
@@ -45,10 +52,6 @@ export function getWeather(onSuccessCallback: (weather: WeatherType)=>void) {
   
     // Attributes for timezone and location
     const utcOffsetSeconds = response.utcOffsetSeconds();
-    const timezone = response.timezone();
-    const timezoneAbbreviation = response.timezoneAbbreviation();
-    const latitude = response.latitude();
-    const longitude = response.longitude();
     
     const current = response.current()!;
     const hourly = response.hourly()!;
@@ -59,8 +62,14 @@ export function getWeather(onSuccessCallback: (weather: WeatherType)=>void) {
         current: {
             time: new Date((Number(current.time()) + utcOffsetSeconds) * 1000),
             temperature2m: current.variables(0)!.value(),
-            apparentTemperature: current.variables(1)!.value(),
-            isDay: current.variables(2)!.value(),
+            relativeHumidity2m: current.variables(1)!.value(),
+            apparentTemperature: current.variables(2)!.value(),
+            isDay: current.variables(3)!.value(),
+            precipitation: current.variables(4)!.value(),
+            rain: current.variables(5)!.value(),
+            showers: current.variables(6)!.value(),
+            snowfall: current.variables(7)!.value(),
+            windSpeed10m: current.variables(8)!.value(),
         },
         hourly: {
             time: range(Number(hourly.time()), Number(hourly.timeEnd()), hourly.interval()).map(
