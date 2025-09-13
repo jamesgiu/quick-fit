@@ -28,10 +28,16 @@ export interface WeatherType {
   };
 }
 
-export function getWeather(onSuccessCallback: (weather: WeatherType) => void) {
+export interface LongLat {
+  latitude: number,
+  longitude: number
+}
+
+export function getWeather(onSuccessCallback: (weather: WeatherType) => void, longLat?: LongLat) {
   const params = {
-    latitude: -37.814,
-    longitude: 144.9633,
+    // Default to Melbourne city
+    latitude: longLat?.latitude ?? -37.814,
+    longitude: longLat?.longitude ?? 144.9633,
     current: [
       "temperature_2m",
       "relative_humidity_2m",

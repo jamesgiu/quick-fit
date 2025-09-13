@@ -244,7 +244,14 @@ const MyApp = () => {
   };
 
   useEffect(() => {
-    getWeather(setWeatherData);
+    const longLatSuccess = (position: GeolocationPosition) => {
+      getWeather(setWeatherData, { 
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude
+      });
+    }
+
+    navigator.geolocation.getCurrentPosition(longLatSuccess, ()=>getWeather(setWeatherData));
   }, []);
 
   useEffect(() => {
